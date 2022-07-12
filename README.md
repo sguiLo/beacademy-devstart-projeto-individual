@@ -15,6 +15,7 @@ atributos;
 * A solução deve ter pelo menos 30% de testes unitários;
 * O projeto deverá ser armazenado no repositório do github.
 
+-  Professor [@unixlira](https://github.com/unixlira)
 
 ## Autor
 
