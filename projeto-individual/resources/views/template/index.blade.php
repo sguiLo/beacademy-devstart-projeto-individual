@@ -29,7 +29,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" href="#">
+                        <a class="nav-link active text-white" href="{{ route('about.index') }}">
                             <h6>SOBRE</h6>
                         </a>
                     </li>
@@ -42,11 +42,6 @@
             </div>
         </nav>
     </div>
-
-
-
-
-
     <div class="container">
         @yield('content')
     </div>
