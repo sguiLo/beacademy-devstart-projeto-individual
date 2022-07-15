@@ -9,4 +9,5 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Route::get('/sobre', [AboutController::class, 'index'])->name('about.index');
