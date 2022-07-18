@@ -4,7 +4,7 @@
 @section('content')
 
 
-<h1 class="d-flex justify-content-start mt-4 container w-75">
+<h1 class="d-flex justify-content-start mt-5 container w-75">
     História do Clube
 </h1>
 <div class="fs-5 mt-3 container w-75">

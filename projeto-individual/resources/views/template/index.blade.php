@@ -12,19 +12,13 @@
 <body>
     <div>
         <nav class="navbar navbar-expand-lg bg-black">
-            <div class="container">
+            <div class="container justify-content-between">
                 <a class="nav-item" href="/">
                     <img src="/storage/escudo.png" alt="" width="60">
                 </a>
                 <ul class="navbar-nav gap-2 mt-2">
                     <li class="nav-item text-white">
-                        <h4>CLUBE</h4>
-                    </li>
-                    <li class="nav-item text-white">
-                        <h4>ATLÉTICO</h4>
-                    </li>
-                    <li class="nav-item text-white">
-                        <h4>MINEIRO</h4>
+                        <h4>CLUBE ATLÉTICO MINEIRO</h4>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -34,7 +28,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-white" href="#">
+                        <a class="nav-link active text-white" href="{{ route('players.index') }}">
                             <h6>ELENCO</h6>
                         </a>
                     </li>

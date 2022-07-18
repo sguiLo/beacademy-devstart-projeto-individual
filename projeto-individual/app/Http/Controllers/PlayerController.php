@@ -2,20 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Players;
+use App\Models\Player;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
 {
-    public function __construct(Players $players)
+    public function __construct(Player $player)
     {
-        $this->model = $players;
+        $this->model = $player;
     }
 
     public function index()
     {
-        $players = Players::all();
 
-        return view('home', compact('players'));
+        $players = Player::all();
+        return view('players.index', compact('players'));
+    }
+
+    public function show($id)
+    {
+        $player = Player::find($id);
+        if (!$player = Player::find($id))
+            return redirect()->route('players.index');
+
+        return view('players.show', compact('player'));
     }
 }
