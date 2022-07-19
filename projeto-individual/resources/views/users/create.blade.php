@@ -4,7 +4,7 @@
 <div class="justify-content-center row mt-3">
     <div class="col-5">
         <h3>Cadastre-se</h3>
-        <form method="POST" action="{{ route('register') }}" class="rounded shadow p-3 bg-dark">
+        <form method="POST" action="{{ route('users.store') }}" class="rounded shadow p-3 bg-dark">
             @csrf
             <!-- Name input -->
             <div class="form-outline mb-4">
