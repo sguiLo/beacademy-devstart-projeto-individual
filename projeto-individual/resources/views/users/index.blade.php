@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<table class="table">
+<table class="table table-striped table-secondary border">
     <thead class="text-center">
         <tr>
             <th scope="col">Id</th>
@@ -40,7 +40,7 @@
             <td>{{ $user->email }}</td>
             <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
             <td>
-                <a href="{{ route('users.show', $user->id) }}" class="btn btn-primary text-white">Visualizar</a>
+                <a href="{{ route('users.show', $user->id) }}" class="btn btn-dark text-white">Visualizar</a>
             </td>
         </tr>
         @endforeach

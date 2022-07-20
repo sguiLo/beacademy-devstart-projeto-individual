@@ -4,7 +4,7 @@
 
 <h1 class="mt-5">Usuário {{ $user->name }}</h1>
 <hr>
-<table class="table">
+<table class="table table-striped table-secondary">
     <thead class="text-center">
         <tr>
             <th scope="col">Id</th>
@@ -23,7 +23,7 @@
             <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning text-white">Editar</a>
             </td>
             <td>
-                <form action="#" method="POST">
+                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-danger text-white">Deletar</button>
