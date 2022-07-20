@@ -34,7 +34,7 @@
                     </li>
                     @if (Auth::user())
                     <li class="nav-item">
-                        <a href="#" class="nav-link active text-white">
+                        <a href="{{ route('users.show', Auth::user()->id) }}" class="nav-link active text-white">
                             <h6>{{ Auth::user()->name }}</h6>
                         </a>
                     </li>

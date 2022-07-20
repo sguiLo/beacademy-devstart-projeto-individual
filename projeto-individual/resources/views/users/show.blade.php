@@ -22,6 +22,7 @@
             <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
             <td><a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning text-white">Editar</a>
             </td>
+            @if (Auth::user()->is_admin ==1)
             <td>
                 <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                     @method('DELETE')
@@ -29,6 +30,7 @@
                     <button type="submit" class="btn btn-danger text-white">Deletar</button>
                 </form>
             </td>
+            @endif
         </tr>
     </tbody>
 </table>

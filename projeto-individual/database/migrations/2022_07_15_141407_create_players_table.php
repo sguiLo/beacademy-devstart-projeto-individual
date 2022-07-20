@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('state');
             $table->string('country');
             $table->string('position');
-            $table->integer('shirt');
+            $table->integer('shirt')->nullable();
             $table->string('salary');
             $table->timestamps();
         });

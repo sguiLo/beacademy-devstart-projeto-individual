@@ -3,9 +3,9 @@
 
 @section('content')
 
-@if (Auth::user())
+@if (Auth::user()->is_admin == 1)
 <div class=" text-end col-sm mt-2 mb-1">
-    <a href="#" class="btn btn-outline-dark">Novo Jogador</a>
+    <a href="{{ route('players.create') }}" class="btn btn-outline-dark">Novo Jogador</a>
 </div>
 @endif
 
@@ -23,7 +23,7 @@
         </form>
     </div>
 </div>
-<div class="row row-cols-md-4">
+<div class="row row-cols-md-3">
     @foreach ($players as $player)
     <div class="col mt-3">
         <div class="card text-center" style="width: 18rem;">
