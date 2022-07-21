@@ -7,7 +7,7 @@
 <div class="row mt-5 justify-content-center">
     <div class="col-4">
         @if ($player->photo)
-        <img src="{{ asset('/storage/jogadores/'.$player->photo) }}" width="300" height="325" alt="">
+        <img src="{{ asset('/storage/'.$player->photo) }}" width="300" height="325" alt="">
         @else
         <img src="{{ asset('/storage/jogadores/avatar.jpg') }}" width="300" height="325" alt="">
         @endif
@@ -32,16 +32,21 @@
                 <span class="fs-6 text-secondary fw-bold"> DATA DE NASCIMENTO</span>
                 <p class="fs-5 fw-semibold">{{ $player->birth_date }}</p>
             </li>
-            <li class="list-group-item">
+            <li class="list-group-item ">
                 <span class="fs-6 text-secondary fw-bold">NATURAL DE :</span>
                 <p class="fs-5 fw-semibold">{{ $player->city }} - {{ $player->state }} - {{ $player->country }}</p>
             </li>
         </div>
-        @if (Auth::user()->is_admin == 1)
+        @if (Auth::user() && Auth::user()->is_admin == 1)
         <div class="d-flex gap-5">
             <li class="list-group-item">
                 <span class="fs-6 text-secondary fw-bold">SALÁRIO</span>
                 <p class="fs-5 fw-semibold">R${{ number_format($player->salary) }} mensais</p>
+            </li>
+            <li class="list-group-item">
+                <td><span class="fs-6 text-secondary fw-bold">EDITE AS INFORMAÇÕES</span>
+                    <p><a href="{{ route('players.edit', $player->id) }}" class="btn btn-sm btn-warning text-white">CLIQUE AQUI</a></p>
+                </td>
             </li>
         </div>
         @endif

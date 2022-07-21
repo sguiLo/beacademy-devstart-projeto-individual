@@ -2,7 +2,8 @@
 @section('title', "Usuário {$user->name}")
 @section('content')
 
-<h1 class="mt-5">Usuário {{ $user->name }}</h1>
+
+<h1 class="mt-5">{{ $user->name }}</h1>
 <hr>
 <table class="table table-striped table-secondary">
     <thead class="text-center">

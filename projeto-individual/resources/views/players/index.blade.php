@@ -3,7 +3,7 @@
 
 @section('content')
 
-@if (Auth::user()->is_admin == 1)
+@if (Auth::user() && Auth::user()->is_admin == 1)
 <div class=" text-end col-sm mt-2 mb-1">
     <a href="{{ route('players.create') }}" class="btn btn-outline-dark">Novo Jogador</a>
 </div>
@@ -28,7 +28,7 @@
     <div class="col mt-3">
         <div class="card text-center" style="width: 18rem;">
             @if ($player->photo)
-            <img class="card-img-top" src="{{ asset('/storage/jogadores/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
+            <img class="card-img-top" src="{{ asset('/storage/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
             @else
             <img class="card-img-top" src="{{ asset('/storage/jogadores/avatar.jpg') }}" height="325" alt="{{ $player->name }}">
             @endif
