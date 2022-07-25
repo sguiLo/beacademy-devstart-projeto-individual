@@ -68,7 +68,6 @@ class PlayerController extends Controller
             if ($player->photo && Storage::exists($player->photo)) {
                 Storage::delete($player->photo);
             }
-
             $data['photo'] =  $request->photo->store('jogadores', 'public');
         }
 

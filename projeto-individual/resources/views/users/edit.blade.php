@@ -15,13 +15,18 @@
             <div class="form-outline mb-4">
                 <input type="email" placeholder="E-mail" id="email" class="form-control" name="email" value="{{ $user->email }}" />
             </div>
-
-            <!-- Password input -->
-            <div class="form-outline mb-4">
+            <div class="form-outline mb-3">
                 <input type="password" placeholder="Senha" id="password" class="form-control" name="password" />
             </div>
-            <!-- Confirm Password input -->
-            <!-- Submit button -->
+            <div class="form-outline mb-4">
+                <input type="password" placeholder="Confirme sua senha" id="password_confirmation" class="form-control" name="password_confirmation" />
+            </div>
+            @if (Auth::user()->is_admin == 1)
+            <input class="form-check-input" type="checkbox" name="admin" value="1">
+            <label class="form-check-label inline-block text-white mb-4" for="flexCheckDefault">
+                Adminstrador
+            </label>
+            @endif
             <button type="submit" class="btn btn-outline-light d-block w-100">Atualizar</button>
         </form>
     </div>

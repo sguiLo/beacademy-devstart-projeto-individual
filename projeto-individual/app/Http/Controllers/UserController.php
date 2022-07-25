@@ -15,8 +15,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = User::find();
-        return view('users.index', compact('user'));
+        $users = User::all();
+        return view('users.index', compact('users'));
     }
 
     public function show($id)
@@ -59,6 +59,8 @@ class UserController extends Controller
 
         if ($request->password)
             $data['password'] = bcrypt($request->password);
+
+        $data['is_admin'] = $request->admin ? 1 : 0;
 
         $user->update($data);
 

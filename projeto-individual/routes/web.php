@@ -18,18 +18,22 @@ Route::middleware(['auth', 'admin'])->group(function () {
     //Usuários
     Route::delete('/usuarios/{id}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/usuarios', [UserController::class, 'index'])->name('users.index');
+    Route::get('/usuarios/cadastrar', [UserController::class, 'create'])->name('users.create');
+    Route::post('/usuarios/cadastrar', [UserController::class, 'store'])->name('users.store');
 
     //Jogadores
+    Route::get('/elenco/{id}/editar', [PlayerController::class, 'edit'])->name('players.edit');
+    Route::put('/elenco/{id}', [PlayerController::class, 'update'])->name('players.update');
     Route::get('/elenco/novo', [PlayerController::class, 'create'])->name('players.create');
     Route::post('/elenco/novo', [PlayerController::class, 'store'])->name('players.store');
 });
 
-
-Route::put('/usuarios/{id}', [UserController::class, 'update'])->name('users.update');
-Route::get('/usuarios/{id}/editar', [UserController::class, 'edit'])->name('users.edit');
-Route::get('/usuarios/cadastrar', [UserController::class, 'create'])->name('users.create');
-Route::post('/usuarios/cadastrar', [UserController::class, 'store'])->name('users.store');
-Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
+//Rota Usuarios
+Route::middleware(['auth'])->group(function () {
+    Route::put('/usuarios/{id}', [UserController::class, 'update'])->name('users.update');
+    Route::get('/usuarios/{id}/editar', [UserController::class, 'edit'])->name('users.edit');
+    Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
+});
 
 
 //Rota Jogadores

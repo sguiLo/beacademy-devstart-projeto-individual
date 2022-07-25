@@ -5,7 +5,7 @@
 
 <h1 class="mt-5">{{ $user->name }}</h1>
 <hr>
-<table class="table table-striped table-secondary">
+<table class="table table-striped table-secondary ">
     <thead class="text-center">
         <tr>
             <th scope="col">Id</th>
@@ -15,7 +15,7 @@
             <th scope="col" colspan="2">AÇÕES</th>
         </tr>
     </thead>
-    <tbody class="text-center">
+    <tbody class="text-center ">
         <tr>
             <th scope="row">{{ $user->id }}</th>
             <td>{{ $user->name }}</td>

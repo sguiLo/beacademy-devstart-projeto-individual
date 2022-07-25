@@ -32,6 +32,13 @@
                             <h6>ELENCO</h6>
                         </a>
                     </li>
+                    @if (Auth::user() && Auth::user()->is_admin == 1)
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" href="{{ route('users.index') }}">
+                            <h6>USUÁRIOS</h6>
+                        </a>
+                    </li>
+                    @endif
                     @if (Auth::user())
                     <li class="nav-item">
                         <a href="{{ route('users.show', Auth::user()->id) }}" class="nav-link active text-white">
@@ -54,7 +61,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('users.create') }}" class="nav-link active text-white">
+                        <a href="{{ route('register') }}" class="nav-link active text-white">
                             <h6>REGISTRE-SE</h6>
                         </a>
                     </li>
