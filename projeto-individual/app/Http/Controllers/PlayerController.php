@@ -75,4 +75,13 @@ class PlayerController extends Controller
 
         return redirect()->route('players.show', $player->id);
     }
+
+    public function destroy($id)
+    {
+        if (!$player = $this->model->find($id))
+            return back();
+
+        $player->delete();
+        return redirect()->route('players.index');
+    }
 }

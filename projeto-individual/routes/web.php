@@ -22,6 +22,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('/usuarios/cadastrar', [UserController::class, 'store'])->name('users.store');
 
     //Jogadores
+    Route::delete('/elenco/{id}', [PlayerController::class, 'destroy'])->name('players.destroy');
     Route::get('/elenco/{id}/editar', [PlayerController::class, 'edit'])->name('players.edit');
     Route::put('/elenco/{id}', [PlayerController::class, 'update'])->name('players.update');
     Route::get('/elenco/novo', [PlayerController::class, 'create'])->name('players.create');
