@@ -8,7 +8,6 @@
 <table class="table table-striped table-secondary ">
     <thead class="text-center">
         <tr>
-            <th scope="col">Id</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
             <th scope="col">Data Cadastro</th>
@@ -17,7 +16,6 @@
     </thead>
     <tbody class="text-center ">
         <tr>
-            <th scope="row">{{ $user->id }}</th>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
