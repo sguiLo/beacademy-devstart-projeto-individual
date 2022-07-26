@@ -5,11 +5,11 @@
 
 
 <div class="row mt-5 justify-content-center">
-    <div class="col-3">
+    <div class="col-4">
         @if ($player->photo)
-        <img src="{{ asset('/storage/'.$player->photo) }}" width="300" height="325" alt="">
+        <img src="{{ asset('/storage/'.$player->photo) }}" width="300" height="325" alt="Foto do {{ $player->name}}" class="rounded">
         @else
-        <img src="{{ asset('/storage/jogadores/avatar.jpg') }}" width="300" height="325" alt="">
+        <img src="{{ asset('/storage/jogadores/avatar.jpg') }}" width="300" height="325" alt="Foto do {{ $player->name}}" class="rounded">
         @endif
     </div>
     <div class="col-3">
@@ -25,7 +25,7 @@
             <span class="fs-6 text-secondary fw-bold">NATURAL DE</span>
             <p class="fs-5 fw-semibold">{{ $player->city }} - {{ $player->state }} - {{ $player->country }}</p>
         </li>
-        @if (Auth::user()->is_admin == 1)
+        @if (Auth::user() && Auth::user()->is_admin == 1)
         <li class="list-group-item">
             <td>
                 <span class="fs-6 text-secondary fw-bold">PARA EDITAR O JOGADOR</span>
@@ -46,7 +46,7 @@
             <span class="fs-6 text-secondary fw-bold">NÚMERO DA CAMISA</span>
             <p class="fs-5 fw-semibold">{{ $player->shirt }}</p>
         </li>
-        @if (Auth::user()->is_admin == 1)
+        @if (Auth::user() && Auth::user()->is_admin == 1)
         <li class="list-group-item">
             <span class="fs-6 text-secondary fw-bold">SALÁRIO</span>
             <p class="fs-5 fw-semibold">R${{ number_format($player->salary) }} mensais</p>
