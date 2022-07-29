@@ -5,6 +5,12 @@
 
 
 <div class="row mt-5 justify-content-center">
+    @if (session()->has('update'))
+    <div class="alert alert-dark alert-dismissible fade show w-75" role="alert">
+        <strong>Atenção!</strong> {{ session()->get('update') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="col-4">
         @if ($player->photo)
         <img src="{{ asset('/storage/'.$player->photo) }}" width="300" height="325" alt="Foto do {{ $player->name}}" class="rounded">

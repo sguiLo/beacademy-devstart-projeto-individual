@@ -34,9 +34,8 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/usuarios/{id}', [UserController::class, 'update'])->name('users.update');
     Route::get('/usuarios/{id}/editar', [UserController::class, 'edit'])->name('users.edit');
     Route::get('/usuarios/{id}', [UserController::class, 'show'])->name('users.show');
+
+    //Rota Jogadores
+    Route::get('/elenco', [PlayerController::class, 'index'])->name('players.index');
+    Route::get('/elenco/{id}', [PlayerController::class, 'show'])->name('players.show');
 });
-
-
-//Rota Jogadores
-Route::get('/elenco', [PlayerController::class, 'index'])->name('players.index');
-Route::get('/elenco/{id}', [PlayerController::class, 'show'])->name('players.show');

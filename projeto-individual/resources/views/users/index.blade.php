@@ -6,12 +6,11 @@
 
 <div class="container">
     <h1 class="mt-5">Listagem de Usuários</h1>
-    <hr>
     <div class="row">
         <div class="col-sm mt-2 mb-5">
             <a href="{{ route('users.create') }}" class="btn btn-outline-dark">Novo Usuário</a>
         </div>
-        <div class="col-sm mt-2 mb-5">
+        <div class="col-5 mt-2 mb-5">
             <form action="{{ route('users.index') }}" method="GET">
                 <div class="input-group">
                     <input type="seach" class="form-control rounded" name="search">

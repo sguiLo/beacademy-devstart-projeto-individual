@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('photo')->nullable();
             $table->string('birth_date');
             $table->string('city');
-            $table->string('state')->nullable();
+            $table->string('state')->nullable()->default('');
             $table->string('country');
             $table->string('position');
             $table->integer('shirt')->nullable();

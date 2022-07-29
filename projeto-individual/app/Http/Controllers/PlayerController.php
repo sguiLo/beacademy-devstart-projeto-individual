@@ -14,11 +14,15 @@ class PlayerController extends Controller
         $this->model = $player;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::all();
-        $players = Player::all();
-        return view('players.index', compact('players', 'users'));
+
+
+        $players = $this->model->getPlayers(
+            $request->search ?? ''
+        );
+
+        return view('players.index', compact('players'));
     }
 
     public function show($id)
@@ -46,7 +50,7 @@ class PlayerController extends Controller
 
         $this->model->create($data);
 
-        return redirect()->route('players.index');
+        return redirect()->route('players.index')->with('create', 'Jogador adicionado com sucesso');
     }
 
     public function edit($id)
@@ -73,7 +77,7 @@ class PlayerController extends Controller
 
         $player->update($data);
 
-        return redirect()->route('players.show', $player->id);
+        return redirect()->route('players.show', $player->id)->with('update', 'Jogador atualizado com sucesso');
     }
 
     public function destroy($id)
@@ -82,6 +86,6 @@ class PlayerController extends Controller
             return back();
 
         $player->delete();
-        return redirect()->route('players.index');
+        return redirect()->route('players.index')->with('destroy', 'Jogador excluido com sucesso');
     }
 }

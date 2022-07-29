@@ -31,7 +31,8 @@
                     <select class="form-select" aria-label="Default select example" id="position" name="position">
                         <option selected>Posição</option>
                         <option value="Goleiro">Goleiro</option>
-                        <option value="Defensor">Defensor</option>
+                        <option value="Zagueiro">Zagueiro</option>
+                        <option value="Lateral">Lateral</option>
                         <option value="Meio Campo">Meio Campo</option>
                         <option value="Atacante">Atacante</option>
                     </select>

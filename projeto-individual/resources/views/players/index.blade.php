@@ -5,25 +5,47 @@
 
 
 <div class="container">
-    <h1 class="mt-5">ELENCO</h1>
-    <hr>
+    <h1 class="mt-5">Elenco</h1>
+    @if (session()->has('destroy'))
+    <div class="alert alert-danger alert-dismissible fade show w-75" role="alert">
+        <strong>Atenção!</strong> {{ session()->get('destroy') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+    @if (session()->has('update'))
+    <div class="alert alert-dark alert-dismissible fade show w-75" role="alert">
+        <strong>Atenção!</strong> {{ session()->get('update') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+    @if (session()->has('create'))
+    <div class="alert alert-dark alert-dismissible fade show w-75" role="alert">
+        <strong>Atenção!</strong> {{ session()->get('create') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="row">
         @if (Auth::user() && Auth::user()->is_admin == 1)
         <div class="col-sm mt-2 mb-1">
             <a href="{{ route('players.create') }}" class="btn btn-outline-dark">Novo Jogador</a>
         </div>
         @endif
-        <div class="col-sm mt-2 mb-5">
-            <form action="#" method="GET">
+        <div class="col-5 mt-2 mb-5">
+            <form action="{{ route('players.index') }}" method="GET">
                 <div class="input-group">
-                    <input type="seach" class="form-control rounded" name="search">
+                    <input type="text" class="form-control rounded" name="search">
                     <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
                 </div>
             </form>
         </div>
     </div>
-    <div class="row row-cols-md-3 ms-5">
+
+
+
+    <h3>GOLEIROS</h3>
+    <div class="row row-cols-md-3 ms-5 mt-3">
         @foreach ($players as $player)
+        @if ($player->position == 'Goleiro')
         <div class="col mt-3">
             <div class="card text-center" style="width: 18rem;">
                 @if ($player->photo)
@@ -43,6 +65,111 @@
                 </div>
             </div>
         </div>
+        @endif
+        @endforeach
+    </div>
+    <h3 class="mt-5">ZAGUEIROS</h3>
+    <div class="row row-cols-md-3 ms-5 mt-3">
+        @foreach ($players as $player)
+        @if ($player->position == 'Zagueiro')
+        <div class="col mt-3">
+            <div class="card text-center" style="width: 18rem;">
+                @if ($player->photo)
+                <img class="card-img-top" src="{{ asset('/storage/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
+                @else
+                <img class="card-img-top" src="{{ asset('/storage/jogadores/avatar.jpg') }}" height="325" alt="{{ $player->name }}">
+                @endif
+                <div class="card-body">
+                    <div class="d-flex align-items-end">
+                        <span class="fs-2 text-warning fw-bold">{{ $player->shirt }}</span>
+                        <h5 class="card-title ms-1">{{ $player->name }}</h5>
+                    </div>
+                    <p class="card-text text-start">{{ $player->position }}</p>
+                    <div class="card-footer">
+                        <a href="{{ route('players.show', $player->id) }}" class="btn btn-secondary btn-md">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+        @endforeach
+    </div>
+    <h3 class="mt-5">LATERAIS</h3>
+    <div class="row row-cols-md-3 ms-5 mt-3">
+        @foreach ($players as $player)
+        @if ($player->position == 'Lateral')
+        <div class="col mt-3">
+            <div class="card text-center" style="width: 18rem;">
+                @if ($player->photo)
+                <img class="card-img-top" src="{{ asset('/storage/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
+                @else
+                <img class="card-img-top" src="{{ asset('/storage/jogadores/avatar.jpg') }}" height="325" alt="{{ $player->name }}">
+                @endif
+                <div class="card-body">
+                    <div class="d-flex align-items-end">
+                        <span class="fs-2 text-warning fw-bold">{{ $player->shirt }}</span>
+                        <h5 class="card-title ms-1">{{ $player->name }}</h5>
+                    </div>
+                    <p class="card-text text-start">{{ $player->position }}</p>
+                    <div class="card-footer">
+                        <a href="{{ route('players.show', $player->id) }}" class="btn btn-secondary btn-md">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+        @endforeach
+    </div>
+    <h3 class="mt-5">MEIO-CAMPISTAS</h3>
+    <div class="row row-cols-md-3 ms-5 mt-3">
+        @foreach ($players as $player)
+        @if ($player->position == 'Meio Campo')
+        <div class="col mt-3">
+            <div class="card text-center" style="width: 18rem;">
+                @if ($player->photo)
+                <img class="card-img-top" src="{{ asset('/storage/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
+                @else
+                <img class="card-img-top" src="{{ asset('/storage/jogadores/avatar.jpg') }}" height="325" alt="{{ $player->name }}">
+                @endif
+                <div class="card-body">
+                    <div class="d-flex align-items-end">
+                        <span class="fs-2 text-warning fw-bold">{{ $player->shirt }}</span>
+                        <h5 class="card-title ms-1">{{ $player->name }}</h5>
+                    </div>
+                    <p class="card-text text-start">{{ $player->position }}</p>
+                    <div class="card-footer">
+                        <a href="{{ route('players.show', $player->id) }}" class="btn btn-secondary btn-md">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+        @endforeach
+    </div>
+    <h3 class="mt-5">ATACANTES</h3>
+    <div class="row row-cols-md-3 ms-5 mt-3">
+        @foreach ($players as $player)
+        @if ($player->position == 'Atacante')
+        <div class="col mt-3">
+            <div class="card text-center" style="width: 18rem;">
+                @if ($player->photo)
+                <img class="card-img-top" src="{{ asset('/storage/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
+                @else
+                <img class="card-img-top" src="{{ asset('/storage/jogadores/avatar.jpg') }}" height="325" alt="{{ $player->name }}">
+                @endif
+                <div class="card-body">
+                    <div class="d-flex align-items-end">
+                        <span class="fs-2 text-warning fw-bold">{{ $player->shirt }}</span>
+                        <h5 class="card-title ms-1">{{ $player->name }}</h5>
+                    </div>
+                    <p class="card-text text-start">{{ $player->position }}</p>
+                    <div class="card-footer">
+                        <a href="{{ route('players.show', $player->id) }}" class="btn btn-secondary btn-md">Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
         @endforeach
     </div>
 </div>
