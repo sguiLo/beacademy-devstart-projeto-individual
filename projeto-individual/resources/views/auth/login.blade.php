@@ -20,6 +20,7 @@
                 <a href="/register" class='nav-link text-white p-0'>Cadastre-se!</a>
             </div>
         </form>
+        <x-auth-validation-errors class="container alert alert-danger mt-2" :errors="$errors" />
     </div>
 </div>
 

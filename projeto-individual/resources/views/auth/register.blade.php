@@ -26,6 +26,7 @@
             <!-- Submit button -->
             <button type="submit" class="btn btn-outline-light d-block w-100">Registrar</button>
         </form>
+        <x-auth-validation-errors class="container alert alert-danger mt-2" :errors="$errors" />
     </div>
 </div>
 
