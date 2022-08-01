@@ -4,7 +4,7 @@
 @section('content')
 
 
-<div class="container">
+<div>
     <h1 class="mt-5">Elenco</h1>
     @if (session()->has('destroy'))
     <div class="alert alert-danger alert-dismissible fade show w-75" role="alert">
@@ -30,19 +30,9 @@
             <a href="{{ route('players.create') }}" class="btn btn-outline-dark">Novo Jogador</a>
         </div>
         @endif
-        <div class="col-5 mt-2 mb-5">
-            <form action="{{ route('players.index') }}" method="GET">
-                <div class="input-group">
-                    <input type="text" class="form-control rounded" name="search">
-                    <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
-                </div>
-            </form>
-        </div>
     </div>
 
-
-
-    <h3>GOLEIROS</h3>
+    <h3 class="mt-5">GOLEIROS</h3>
     <div class="row row-cols-md-3 ms-5 mt-3">
         @foreach ($players as $player)
         @if ($player->position == 'Goleiro')
@@ -55,7 +45,7 @@
                 @endif
                 <div class="card-body">
                     <div class="d-flex align-items-end">
-                        <span class="fs-2 text-warning fw-bold">{{ $player->shirt }}</span>
+                        <span class="fs-2 text-dark fw-bold">{{ $player->shirt }}</span>
                         <h5 class="card-title ms-1">{{ $player->name }}</h5>
                     </div>
                     <p class="card-text text-start">{{ $player->position }}</p>
@@ -81,7 +71,7 @@
                 @endif
                 <div class="card-body">
                     <div class="d-flex align-items-end">
-                        <span class="fs-2 text-warning fw-bold">{{ $player->shirt }}</span>
+                        <span class="fs-2 text-dark fw-bold">{{ $player->shirt }}</span>
                         <h5 class="card-title ms-1">{{ $player->name }}</h5>
                     </div>
                     <p class="card-text text-start">{{ $player->position }}</p>
@@ -107,7 +97,7 @@
                 @endif
                 <div class="card-body">
                     <div class="d-flex align-items-end">
-                        <span class="fs-2 text-warning fw-bold">{{ $player->shirt }}</span>
+                        <span class="fs-2 text-dark fw-bold">{{ $player->shirt }}</span>
                         <h5 class="card-title ms-1">{{ $player->name }}</h5>
                     </div>
                     <p class="card-text text-start">{{ $player->position }}</p>
@@ -133,7 +123,7 @@
                 @endif
                 <div class="card-body">
                     <div class="d-flex align-items-end">
-                        <span class="fs-2 text-warning fw-bold">{{ $player->shirt }}</span>
+                        <span class="fs-2 text-dark fw-bold">{{ $player->shirt }}</span>
                         <h5 class="card-title ms-1">{{ $player->name }}</h5>
                     </div>
                     <p class="card-text text-start">{{ $player->position }}</p>
@@ -159,7 +149,7 @@
                 @endif
                 <div class="card-body">
                     <div class="d-flex align-items-end">
-                        <span class="fs-2 text-warning fw-bold">{{ $player->shirt }}</span>
+                        <span class="fs-2 text-dark fw-bold">{{ $player->shirt }}</span>
                         <h5 class="card-title ms-1">{{ $player->name }}</h5>
                     </div>
                     <p class="card-text text-start">{{ $player->position }}</p>

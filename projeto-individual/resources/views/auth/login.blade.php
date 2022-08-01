@@ -14,7 +14,7 @@
             <div class="d-flex justify-content-between pt-2">
                 @if (Route::has('password.request'))
                 <a class="nav-link text-white p-0" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                    {{ __('Esqueceu sua senha?') }}
                 </a>
                 @endif
                 <a href="/register" class='nav-link text-white p-0'>Cadastre-se!</a>

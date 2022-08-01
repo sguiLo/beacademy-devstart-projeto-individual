@@ -13,11 +13,6 @@
     <div>
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container justify-content-between">
-                <ul class="navbar-nav mt-2">
-                    <li class="nav-item text-white">
-                        <h4>CLUBE ATLÉTICO MINEIRO</h4>
-                    </li>
-                </ul>
                 <a class="nav-item" href="/">
                     <img src="/storage/escudo.png" alt="" width="60">
                 </a>
@@ -57,12 +52,12 @@
                     @else
                     <li class="nav-item">
                         <a href="{{ route('login') }}" class="nav-link active text-white">
-                            <h6>ENTRAR</h6>
+                            <h6>Entrar</h6>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('register') }}" class="nav-link active text-white">
-                            <h6>REGISTRE-SE</h6>
+                            <h6>Registre-se</h6>
                         </a>
                     </li>
                     @endif
