@@ -1,0 +1,20 @@
+[2022-08-02 16:02:50] local.ERROR: Uncaught Symfony\Component\Finder\Exception\DirectoryNotFoundException: The "C:\CURSOS\DEVSTART PAYLIVRE\PROJETOS\beacademy-devstart-projeto-individual\projeto-individual\resources\views" directory does not exist. in C:\CURSOS\DEVSTART PAYLIVRE\PROJETOS\beacademy-devstart-projeto-individual\vendor\symfony\finder\Finder.php:590
+Stack trace:
+#0 C:\CURSOS\DEVSTART PAYLIVRE\PROJETOS\beacademy-devstart-projeto-individual\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php(561): Symfony\Component\Finder\Finder->in('C:\\CURSOS\\DEVST...')
+#1 Command line code(1): Illuminate\Filesystem\Filesystem->files('C:\\CURSOS\\DEVST...')
+#2 Command line code(1): getViews('C:\\CURSOS\\DEVST...', Object(Illuminate\Filesystem\Filesystem))
+#3 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught Symfony\\Component\\Finder\\Exception\\DirectoryNotFoundException: The \"C:\\CURSOS\\DEVSTART PAYLIVRE\\PROJETOS\\beacademy-devstart-projeto-individual\\projeto-individual\esources\\views\" directory does not exist. in C:\\CURSOS\\DEVSTART PAYLIVRE\\PROJETOS\\beacademy-devstart-projeto-individual\\vendor\\symfony\\finder\\Finder.php:590
+Stack trace:
+#0 C:\\CURSOS\\DEVSTART PAYLIVRE\\PROJETOS\\beacademy-devstart-projeto-individual\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(561): Symfony\\Component\\Finder\\Finder->in('C:\\\\CURSOS\\\\DEVST...')
+#1 Command line code(1): Illuminate\\Filesystem\\Filesystem->files('C:\\\\CURSOS\\\\DEVST...')
+#2 Command line code(1): getViews('C:\\\\CURSOS\\\\DEVST...', Object(Illuminate\\Filesystem\\Filesystem))
+#3 {main}
+  thrown at C:\\CURSOS\\DEVSTART PAYLIVRE\\PROJETOS\\beacademy-devstart-projeto-individual\\vendor\\symfony\\finder\\Finder.php:590)
+[stacktrace]
+#0 C:\\CURSOS\\DEVSTART PAYLIVRE\\PROJETOS\\beacademy-devstart-projeto-individual\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(246): Symfony\\Component\\ErrorHandler\\Error\\FatalError->__construct(message: ''Uncaught Symfo...', code: '0', error: '['type' => 1, '...', traceOffset: '0', traceArgs: '???', trace: '???')
+#1 C:\\CURSOS\\DEVSTART PAYLIVRE\\PROJETOS\\beacademy-devstart-projeto-individual\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(233): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->fatalErrorFromPhpError(error: '['type' => 1, '...', traceOffset: '0')
+#2 C:\\CURSOS\\DEVSTART PAYLIVRE\\PROJETOS\\beacademy-devstart-projeto-individual\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(257): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#3 C:\\CURSOS\\DEVSTART PAYLIVRE\\PROJETOS\\beacademy-devstart-projeto-individual\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(0): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure:C:\\CURSOS\\DEVSTART PAYLIVRE\\PROJETOS\\beacademy-devstart-projeto-individual\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php:256-258}()
+#4 {main}
+"} 

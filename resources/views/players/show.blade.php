@@ -3,9 +3,11 @@
 
 @section('content')
 @if (session()->has('update'))
-<div class="alert alert-dark alert-dismissible fade show w-75" role="alert">
-    <strong>Atenção!</strong> {{ session()->get('update') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<div class="d-flex justify-content-center">
+    <div class="alert alert-dark alert-dismissible fade show w-50 mt-2" role="alert">
+        <strong>Atenção!</strong> {{ session()->get('update') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 </div>
 @endif
 <h3 class="text-center mt-3">Detalhes do jogador - {{ $player->name }}</h3>

@@ -2,7 +2,22 @@
 @section('title', 'Login')
 @section('content')
 
-
+@if (session()->has('destroy'))
+<div class="d-flex justify-content-center">
+    <div class="alert alert-dark alert-dismissible fade show w-50 mt-2" role="alert">
+        <strong>Atenção!</strong> {{ session()->get('destroy') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+@endif
+@if (session()->has('create'))
+<div class="d-flex justify-content-center">
+    <div class="alert alert-dark alert-dismissible fade show w-50 mt-2" role="alert">
+        <strong>Atenção!</strong> {{ session()->get('create') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+@endif
 
 <div class="container">
     <h1 class="mt-5">Listagem de Usuários</h1>
@@ -21,7 +36,7 @@
     </div>
 
 
-    <table class="table table-striped table-secondary border">
+    <table class="table table-striped table-secondary border-dark">
         <thead class="text-center">
             <tr>
                 <th scope="col">Id</th>

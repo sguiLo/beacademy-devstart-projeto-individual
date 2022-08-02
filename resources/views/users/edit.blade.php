@@ -13,7 +13,7 @@
             </div>
             <!-- Email input -->
             <div class="form-outline mb-4">
-                <input type="email" placeholder="E-mail" id="email" class="form-control" name="email" value="{{ $user->email }}" />
+                <input type="email" placeholder="E-mail" id="email" class="form-control" name="email" value="{{ $user->email }}" disabled />
             </div>
             <div class="form-outline mb-3">
                 <input type="password" placeholder="Senha" id="password" class="form-control" name="password" />
@@ -29,6 +29,7 @@
             @endif
             <button type="submit" class="btn btn-outline-light d-block w-100">Atualizar</button>
         </form>
+        <x-auth-validation-errors class="container alert alert-danger mt-2" :errors="$errors" />
     </div>
 </div>
 

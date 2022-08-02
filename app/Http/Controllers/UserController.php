@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserFormRequest;
 use App\Models\Players;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -33,13 +34,14 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store(Request $request)
+    public function store(UserFormRequest $request)
     {
         $data = $request->all();
         $data['password'] = bcrypt($request->passwword);
 
         $this->model->create($data);
-        return view('home');
+        $users = User::all();
+        return view('users.index', compact('users'));
     }
 
     public function edit($id)
@@ -50,12 +52,12 @@ class UserController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(Request $request, $id)
+    public function update(UserFormRequest $request, $id)
     {
         if (!$user = $this->model->find($id))
             return redirect()->route('users.index');
 
-        $data = $request->only('name', 'email');
+        $data = $request->only('name');
 
         if ($request->password)
             $data['password'] = bcrypt($request->password);
@@ -64,7 +66,7 @@ class UserController extends Controller
 
         $user->update($data);
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.show', $user->id)->with('update', 'Usuário atualizado com sucesso.');
     }
 
     public function destroy($id)
@@ -73,6 +75,6 @@ class UserController extends Controller
             return redirect()->route('users.index');
 
         $user->delete();
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('destroy', 'Usuário excluído com sucesso.');
     }
 }

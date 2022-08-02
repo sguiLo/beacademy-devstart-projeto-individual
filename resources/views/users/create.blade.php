@@ -4,7 +4,7 @@
 <div class="justify-content-center row mt-3">
     <div class="col-5">
         <h3>Cadastre-se</h3>
-        <form method="POST" action="{{ route('register') }}" class="rounded shadow p-3 bg-dark">
+        <form method="POST" action="{{ route('users.store') }}" class="rounded shadow p-3 bg-dark">
             @csrf
             <!-- Name input -->
             <div class="form-outline mb-4">
@@ -12,12 +12,12 @@
             </div>
             <!-- Email input -->
             <div class="form-outline mb-4">
-                <input type="email" placeholder="E-mail" id="email" class="form-control" name="email" />
+                <input type="email" placeholder="E-mail" id="email" class="form-control" name="email" required />
             </div>
 
             <!-- Password input -->
             <div class="form-outline mb-4">
-                <input type="password" placeholder="Senha" id="password" class="form-control" name="password" />
+                <input type="password" placeholder="Senha" id="password" class="form-control" name="password" required />
             </div>
             <!-- Confirm Password input -->
             <div class="form-outline mb-4">
@@ -26,6 +26,7 @@
             <!-- Submit button -->
             <button type="submit" class="btn btn-outline-light d-block w-100">Registrar</button>
         </form>
+        <x-auth-validation-errors class="container alert alert-danger mt-2" :errors="$errors" />
     </div>
 </div>
 
