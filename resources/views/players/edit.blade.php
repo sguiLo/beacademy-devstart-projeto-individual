@@ -9,6 +9,11 @@
             @method('PUT')
             @csrf
             <div class="form-outline mb-2">
+                <label for="name" class="text-white">Nome completo</label>
+                <input type="text" placeholder="Nome Completo" id="full_name" class="form-control" name="full_name" value="{{ $player->full_name }}" />
+            </div>
+            <div class="form-outline mb-2">
+                <label for="name" class="text-white">Nome de jogador</label>
                 <input type="text" placeholder="Nome Completo" id="name" class="form-control" name="name" value="{{ $player->name }}" />
             </div>
             <div class="row">
@@ -17,7 +22,8 @@
                     <select class="form-select" aria-label="Default select example" id="position" name="position">
                         <option selected>{{ $player->position }}</option>
                         <option value="Goleiro">Goleiro</option>
-                        <option value="Defensor">Defensor</option>
+                        <option value="Zagueiro">Zagueiro</option>
+                        <option value="Lateral">Lateral</option>
                         <option value="Meio Campo">Meio Campo</option>
                         <option value="Atacante">Atacante</option>
                     </select>

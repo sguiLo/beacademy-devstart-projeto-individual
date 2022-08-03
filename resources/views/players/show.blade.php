@@ -23,8 +23,8 @@
 
 <div class="mt-5 d-flex justify-content-center gap-5">
     <div>
-        <span class="fs-6 text-secondary fw-bold">NOME:</span>
-        <p class="fs-5 fw-semibold">{{ $player->name }}</p>
+        <span class="fs-6 text-secondary fw-bold">NOME COMPLETO:</span>
+        <p class="fs-5 fw-semibold">{{ $player->full_name }}</p>
 
         <span class="fs-6 text-secondary fw-bold"> DATA DE NASCIMENTO</span>
         <p class="fs-5 fw-semibold">{{ $player->birth_date }}</p>

@@ -49,7 +49,6 @@ class PlayerController extends Controller
         }
 
         $this->model->create($data);
-
         return redirect()->route('players.index')->with('create', 'Jogador adicionado com sucesso');
     }
 

@@ -8,7 +8,10 @@
         <form method="POST" action="{{ route('players.store') }}" class="rounded shadow p-3 bg-dark" enctype="multipart/form-data">
             @csrf
             <div class="form-outline mb-4">
-                <input type="text" placeholder="Nome Completo" id="name" class="form-control" name="name" />
+                <input type="text" placeholder="Nome Completo" id="full_name" class="form-control" name="full_name" />
+            </div>
+            <div class="form-outline mb-4">
+                <input type="text" placeholder="Nome de jogador" id="name" class="form-control" name="name" />
             </div>
             <div class="row">
                 <div class="form-outline mb-2 col-sm">

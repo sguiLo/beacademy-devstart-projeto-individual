@@ -5,7 +5,7 @@
 
 
 <div>
-    <h1 class="mt-5">Elenco</h1>
+    <h1 class="mt-5">Elenco do <span class="text-warning">GALO</span></h1>
     @if (session()->has('destroy'))
     <div class="alert alert-danger alert-dismissible fade show w-75" role="alert">
         <strong>Atenção!</strong> {{ session()->get('destroy') }}

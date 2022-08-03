@@ -4,7 +4,7 @@
 
 @if (session()->has('destroy'))
 <div class="d-flex justify-content-center">
-    <div class="alert alert-dark alert-dismissible fade show w-50 mt-2" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show w-50 mt-2" role="alert">
         <strong>Atenção!</strong> {{ session()->get('destroy') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
