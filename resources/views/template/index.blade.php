@@ -13,8 +13,8 @@
     <div>
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container justify-content-between">
-                <a class="nav-item" href="/">asasa
-                    <img src="/storage/escudo.png" alt="" width="60">
+                <a class="nav-item" href="/">
+                    <img src="{{'storage/escudo.png'}}" alt="" width="60">
                 </a>
                 <ul class="navbar-nav">
                     <li class="nav-item">
