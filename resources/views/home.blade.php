@@ -25,7 +25,7 @@
         <h3>Conheça a nova casa do <span class="text-warning">GALO</span>, a arena MRV! Inauguração em 2023, mais informações <a href="https://www.arenamrv.com.br/" target="_blank" class="link-dark">aqui.</a></h3>
     </div>
     <div class="col-sm">
-        <img src="/storage/arena.png" alt="" width="650" height="500">
+        <img src="https://galonaveia.atletico.com.br/assets/imgs/arena-1.png" alt="" width="650" height="500">
     </div>
 </div>
 

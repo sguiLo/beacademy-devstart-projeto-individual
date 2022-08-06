@@ -14,7 +14,7 @@
 <div class="d-flex mt-5 justify-content-center">
     <div>
         @if ($player->photo)
-        <img src="{{ asset('/storage/'.$player->photo) }}" width="300" height="325" alt="Foto do {{ $player->name}}" class="rounded">
+        <img src="{{ asset('https://devstart-galo.s3.amazonaws.com/'.$player->photo) }}" width="300" height="325" alt="Foto do {{ $player->name}}" class="rounded">
         @else
         <img src="{{ asset('/storage/jogadores/avatar.jpg') }}" width="300" height="325" alt="Foto do {{ $player->name}}" class="rounded">
         @endif

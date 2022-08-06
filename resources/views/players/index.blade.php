@@ -39,7 +39,7 @@
         <div class="col mt-3">
             <div class="card text-center" style="width: 18rem;">
                 @if ($player->photo)
-                <img class="card-img-top" src="{{ asset('/storage/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
+                <img class="card-img-top" src="{{ asset('https://devstart-galo.s3.amazonaws.com/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
                 @else
                 <img class="card-img-top" src="{{ asset('/storage/jogadores/avatar.jpg') }}" height="325" alt="{{ $player->name }}">
                 @endif
@@ -65,7 +65,7 @@
         <div class="col mt-3">
             <div class="card text-center" style="width: 18rem;">
                 @if ($player->photo)
-                <img class="card-img-top" src="{{ asset('/storage/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
+                <img class="card-img-top" src="{{ asset('https://devstart-galo.s3.amazonaws.com/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
                 @else
                 <img class="card-img-top" src="{{ asset('/storage/jogadores/avatar.jpg') }}" height="325" alt="{{ $player->name }}">
                 @endif
@@ -91,7 +91,7 @@
         <div class="col mt-3">
             <div class="card text-center" style="width: 18rem;">
                 @if ($player->photo)
-                <img class="card-img-top" src="{{ asset('/storage/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
+                <img class="card-img-top" src="{{ asset('https://devstart-galo.s3.amazonaws.com/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
                 @else
                 <img class="card-img-top" src="{{ asset('/storage/jogadores/avatar.jpg') }}" height="325" alt="{{ $player->name }}">
                 @endif
@@ -117,7 +117,7 @@
         <div class="col mt-3">
             <div class="card text-center" style="width: 18rem;">
                 @if ($player->photo)
-                <img class="card-img-top" src="{{ asset('/storage/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
+                <img class="card-img-top" src="{{ asset('https://devstart-galo.s3.amazonaws.com/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
                 @else
                 <img class="card-img-top" src="{{ asset('/storage/jogadores/avatar.jpg') }}" height="325" alt="{{ $player->name }}">
                 @endif
@@ -143,7 +143,7 @@
         <div class="col mt-3">
             <div class="card text-center" style="width: 18rem;">
                 @if ($player->photo)
-                <img class="card-img-top" src="{{ asset('/storage/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
+                <img class="card-img-top" src="{{ asset('https://devstart-galo.s3.amazonaws.com/'.$player->photo) }}" height="325" alt="{{ $player->name }}">
                 @else
                 <img class="card-img-top" src="{{ asset('/storage/jogadores/avatar.jpg') }}" height="325" alt="{{ $player->name }}">
                 @endif

@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-outline mb-2 col-sm">
                     @if ($player->photo)
-                    <img src="{{ asset('/storage/'.$player->photo) }}" width="150" height="125" alt="" class="rounded">
+                    <img src="{{ asset('https://devstart-galo.s3.amazonaws.com/'.$player->photo) }}" width="150" height="125" alt="" class="rounded">
                     @else
                     <img src="{{ asset('/storage/jogadores/avatar.jpg') }}" width="150" height="125" alt="">
                     @endif

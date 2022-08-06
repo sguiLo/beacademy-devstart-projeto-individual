@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Player;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -43,9 +42,11 @@ class PlayerController extends Controller
     {
         $data = $request->all();
         if ($request->photo) {
-            $file = $request['photo'];
-            $path = $file->store('jogadores', 'public');
-            $data['photo'] = $path;
+            // $file = $request['photo'];
+            // $path = $file->store('jogadores', 'public');
+            // $data['photo'] = $path;
+            $data['photo'] = $request->file('photo')->store('jogadores', 'public');
+            Storage::disk('s3')->put($data['photo'], file_get_contents($request->photo));
         }
 
         $this->model->create($data);
@@ -70,7 +71,9 @@ class PlayerController extends Controller
         if ($request->photo) {
             if ($player->photo && Storage::exists($player->photo)) {
                 Storage::delete($player->photo);
+                Storage::delete('https://devstart-galo.s3.amazonaws.com/' . $player->photo);
             }
+            $path = $request->photo->store('/jogadores', 's3');
             $data['photo'] =  $request->photo->store('jogadores', 'public');
         }
 
