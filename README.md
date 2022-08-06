@@ -18,6 +18,13 @@ atributos;
 ## Link do projeto no heroku! 
 - https://devstart-galo.herokuapp.com/
 
+### Usuario comum
+-email: usuario@gmail.com <br>
+-senha: usuario123
+
+### Usuario admin
+-email: admin@gmail.com <br>
+-senha: admin123
 
 ## Autor
 
